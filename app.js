@@ -84,8 +84,68 @@ addCartToHTML();
 
 addCartToHTML();
 function addCartToHTML(){
+    // clear default data
     let listCartHTML = document.querySelector('.listCart');
-    listCart.innerHTML = '';
+    listCartHTML.innerHTML = '';
 
-    let totalHTML =document.querySelector('.totalQuantity')
+    let totalHTML =document.querySelector('.totalQuantity');
+    let totalQuantity = 0;
+// if product is in cart
+    if(listCart){
+        listCart.forEach(product =>{
+            if (product) {
+                let newCart = document.createElement('div');
+                newCart.classList.add('item');
+                newCart.innerHTML = `
+                <img src="${product.image}" alt="">
+                <div class="content">
+                    <div class="name">
+                    ${product.name}
+                    </div>
+                    <div class="price">
+                    ${product.price} /1 product
+                    </div>
+                </div>
+                <div class="quantity">
+                    <button onclick  = "changeQuantity(${product.id}, '-')">-</button>
+                    <span class="value">${product.quantity}</span>
+                    <button onclick  = "changeQuantity(${product.id}, '+')">+</button>
+                </div> `;
+                listCartHTML.appendChild(newCart);
+                totalQuantity = totalQuantity + product.quantity;
+                
+            }
+
+        })
+    }
+
+    totalHTML.innerHTML = totalQuantity;
+}
+
+
+function changeQuantity($idProduct, $type) {
+    switch ($type) {
+        case '+':
+            listCart[$idProduct].quantity++;
+            break;
+
+            case '-':
+            listCart[$idProduct].quantity--;
+            if (listCart[$idProduct].quantity <= 0) {
+                delete listCart[$idProduct];
+            }
+            break;
+    
+        default:
+            break;
+    }
+
+    // save new data in cookie
+    let timeSave = "expires=Thu, 31 Dec 2025 23:59:59 UTC";
+    document.cookie = "listCart="+JSON.stringify(listCart)+"; "+ timeSave+"; path=/;";
+
+
+    // reload list cart in HTML
+
+    addCartToHTML();
 }
