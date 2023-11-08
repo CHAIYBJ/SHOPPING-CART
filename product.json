@@ -2,42 +2,42 @@
 
     {
         "id": 1,
-        "name": "product name 1",
+        "name": "BESPOKE LOW FLAT",
         "price":6000,
         "image":"images/1.jpg"
     },
 
     {
         "id": 2,
-        "name": "product name 2",
+        "name": "BESPOKE LOW FLAT(GREEN)",
         "price":6000,
         "image":"images/2.jpg"
     },
 
     {
         "id": 3,
-        "name": "product name 3",
+        "name": "BESPOKE LOW FLAT(WHITE)",
         "price":6000,
         "image":"images/3.jpg"
     },
 
     {
         "id": 4,
-        "name": "product name 4",
+        "name": "BESPOKE LOW FLAT(WHITE)",
         "price":3000,
         "image":"images/4.jpg"
     },
 
     {
         "id": 5,
-        "name": "product name 5",
+        "name": "BESPOKE HIGH-BOTTOM",
         "price":7500,
         "image":"images/5.jpg"
     },
 
     {
         "id": 6,
-        "name": "product name 6",
+        "name": "BESPOKE LOW FLAT(PINK)",
         "price":6500,
         "image":"images/6.jpg"
     }
