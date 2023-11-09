@@ -88,7 +88,7 @@ function addCartToHTML(){
     let listCartHTML = document.querySelector('.listCart');
     listCartHTML.innerHTML = '';
 
-    let totalQuantityHTML = document.querySelector('.totalQuantitys');
+    let totalQuantityHTML = document.querySelector('.totalQuantityss');
     let totalPriceHTML = document.querySelector('.totalPrice');
 
     let totalHTML =document.querySelector('.totalQuantity');
