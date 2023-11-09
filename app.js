@@ -88,7 +88,11 @@ function addCartToHTML(){
     let listCartHTML = document.querySelector('.listCart');
     listCartHTML.innerHTML = '';
 
+    let totalQuantityHTML = document.querySelector('.totalQuantitys');
+    let totalPriceHTML = document.querySelector('.totalPrice');
+
     let totalHTML =document.querySelector('.totalQuantity');
+    let totalPrice = 0;
     let totalQuantity = 0;
 // if product is in cart
     if(listCart){
@@ -110,9 +114,12 @@ function addCartToHTML(){
                     <button onclick  = "changeQuantity(${product.id}, '-')">-</button>
                     <span class="value">${product.quantity}</span>
                     <button onclick  = "changeQuantity(${product.id}, '+')">+</button>
-                </div> `;
+                </div>
+                 `;
                 listCartHTML.appendChild(newCart);
                 totalQuantity = totalQuantity + product.quantity;
+                totalPrice = totalPrice + (product.price * product.quantity);
+
                 
             }
 
@@ -120,6 +127,8 @@ function addCartToHTML(){
     }
 
     totalHTML.innerHTML = totalQuantity;
+    totalQuantityHTML.innerText = totalQuantity;
+    totalPriceHTML.innerText  = totalPrice;
 }
 
 
